@@ -1,5 +1,5 @@
 # Test data
-### CHANGE EVERYTHING BELOW
+
 This module includes artificially generated data which matches the format of [Moodle SQL Database Table Exports](https://www.examulator.com/er/4.0/).
 - 26 tables formatted in CSVs, as described in the Moodle data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
 
