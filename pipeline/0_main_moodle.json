@@ -1,0 +1,93 @@
+{
+    "name": "0_main_moodle",
+    "properties": {
+        "description": "Change the workspace as needed.\nThis module only utilizes hed test data.\n",
+        "activities": [
+            {
+                "name": "1_land_moodle_hed_test_data",
+                "description": "Currently, only Moodle test data formatted as a Higher Ed. institution is available for module demonstration. ",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "1_land_moodle",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "workspace": {
+                            "value": "@pipeline().parameters.workspace",
+                            "type": "Expression"
+                        },
+                        "land_k12_or_hed_test_data": "hed"
+                    }
+                }
+            },
+            {
+                "name": "2_ingest_moodle",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "1_land_moodle_hed_test_data",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "2_ingest_moodle",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "workspace": {
+                            "value": "@pipeline().parameters.workspace",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "3_refine_moodle",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "2_ingest_moodle",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "3_refine_moodle",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "workspace": {
+                            "value": "@pipeline().parameters.workspace",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "workspace": {
+                "type": "string",
+                "defaultValue": "dev"
+            }
+        },
+        "folder": {
+            "name": "1_Modules/Moodle Module/v0.1rc1"
+        },
+        "annotations": [],
+        "lastPublishTime": "2023-03-28T19:16:29Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}
