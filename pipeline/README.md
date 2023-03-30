@@ -1,18 +1,17 @@
 # Pipelines
-### CHANGE EVERYTHING BELOW
+
 This module uses a Synapse pipeline to:
-1. Land Microsoft Education Insights test data into ```stage1/Transactional/M365/v1.14``` of the data lake (this step is omitted for production data).
-2. Ingest data into ```stage2/Ingested/M365/v1.14``` and create a lake database (db) for queries.
-3. Correct the table schemas into ```stage2/Ingested_Corrected/M365/v1.14```
-4. Refine data into ```stage2/Refined/M365/v1.14/(general and sensitive)``` and create lake and SQL dbs for queries.
-      * Use the ```sdb_(dev or other workspace)_s2r_m365_v1p14``` for connecting the serverless SQL db with Power BI DirectQuery.
+1. Land Moodle test data into ```stage1/Transactional/moodle/v0.1``` of the data lake (this step is omitted for production data).
+2. Ingest data into ```stage2/Ingested/moodle/v0.1``` and create a SQL database (db) for queries.
+3. Refine data into ```stage2/Refined/moodle/v0.1/(general and sensitive)``` and create lake and SQL dbs for queries.
+      * Use the ```sdb_(dev or other workspace)_s2r_moodle_v0p1``` for connecting the serverless SQL db with Power BI DirectQuery.
     
 Notes:
-- Ingestion initially copies the data from ```stage1``` to ```stage2/Ingested```, except changes the file format from CSVs to Delta tables.
-   * One of the later steps in the ingestion process, corrects and structures each module table's schema, as needed; these corrected tables are written to ```stage2/Ingested_Corrected```.
-- Data columns contianing personal identifiable information (PII) are identified in the data schemas located in the [module metadata.csv](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/test_data/metadata.csv).
-- As data is refined from ```stage2/Ingested_Corrected``` to ```stage2/Refined/.../(general and sensitive)```, data is separated into pseudonymized data where PII columns hashed or masked (```stage2/Refined/.../general```) and lookup tables containing the PII (```stage2/Refined/.../sensitive```). Non-pseudonmized data will then be protected at higher security levels.
+- Ingestion initially copies the data from ```stage1``` to ```stage2/Ingested```, except changes the file format from CSVs to Delta tables, and uses Structured-Streaming to update tables as needed for processing (i.e., snapshot, delta, or additive batch data).
+- Data columns contianing personal identifiable information (PII) are identified in the data schemas located in the [module metadata.csv](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Moodle/test_data/metadata.csv).
+- As data is refined from ```stage2/Ingested``` to ```stage2/Refined/.../(general and sensitive)```, data is separated into pseudonymized data where PII columns hashed or masked (```stage2/Refined/.../general```) and lookup tables containing the PII (```stage2/Refined/.../sensitive```). Non-pseudonmized data will then be protected at higher security levels.
 
+### CHANGE IMAGES AND INSTRUCTIONS BELOW
 Module Pipeline for Test Data  | Module Pipeline for Production Data
 :-------------------------:|:-------------------------:
 ![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/v0.1_pipeline_instructions/module_v0.1_test_data_pipeline_overview.png) |  ![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/v0.1_pipeline_instructions/module_v0.1_prod_data_pipeline_overview.png)  
@@ -22,18 +21,18 @@ For production data, this module pipeline can be automatically triggered (i.e. d
 ## Pipeline Setup Instructions
 
 Two sets of instructions are included:
-1. [Test data pipeline instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/pipeline#test-data-pipeline-instructions)
-2. [Production data pipeline instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/pipeline#production-data-pipeline-instructions)
+1. [Test data pipeline instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Moodle/pipeline#test-data-pipeline-instructions)
+2. [Production data pipeline instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Moodle/pipeline#production-data-pipeline-instructions)
 
 ### Test Data Pipeline Instructions
 
 <details><summary>Expand Test Data Pipeline Instructions</summary>
 <p>
 
-1. Complete the first steps of the [module setup instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights#module-setup-instructions)
+1. Complete the first steps of the [module setup instructions](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Moodle#module-setup-instructions)
 2. Install the module to your workspace as outlined in the instructions.
-3. Once successfully installed, choose which workspace to work in, and whether you want to run (i.e. land, ingest and refine) the K-12 test data set or the higher education test data set.
-    * <em>Note</em>: Input either ```k12``` or ```hed``` in the ```run_k12_or_hed_test_data``` pipeline parameter, to run this pipeline successfully.
+3. Once successfully installed, choose which workspace to work in.
+    * <em>Note</em>: This module currently only uses test data formatted as a higher education institution (hed).
 ![](https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/v0.1_pipeline_instructions/insights_module_v0.1_instructions_p1.1.png)
 
 4. Explore the pipeline as desired for any additional changes to landing, ingesting, and refining the test data.
