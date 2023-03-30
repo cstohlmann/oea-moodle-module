@@ -1,5 +1,5 @@
 # Notebooks
-### CHANGE EVERYTHING BELOW
+
 This module has two sets of notebooks:
  1. One notebook is used to demonstrate an alternate method of data processing (i.e. landing, ingesting, and refining Moodle data) with examples of explorative possbilities.
  2. The rest of the (2 other) notebooks are necessary to support the main [module pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Moodle/pipeline) for speeding up the ingestion process of the module tables and pseudonymizing/refining the data.
