@@ -7,10 +7,9 @@
 [Moodle](https://moodle.org/) is a learning management system (LMS) for educational institutions, that provides data on learners' digital activity in Moodle applications such as assignments, lesson progresses, forum discussions, and quiz results.
 
 Using this module, data from Moodle can be exported into your organization's OEA data lakes to combine it with other datasets for a variety of use cases, including Learning Analytics. 
+
+Moodle requires the access of the [Moodle Database](https://www.examulator.com/er/) from Moodle, which provides school and class roster data as well as activity/student performance data, to enable retrieving the files to be landed in the data lake.
 ### CHANGE EVERYTHING BELOW
-Moodle requires the implementation of [Microsoft School Data Sync](https://sds.microsoft.com/) on O365, which provides school and class roster data, to enable its reports in Teams. For production data, you will need an O365 education tenant as Microsoft Education Insights is only enabled for education tenants.
-
-
 <p align="center">
   <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/insights_module_v0.1_overview.png" alt="Microsoft Insights Module v0.1rc1 Overview"/>
 </p>
