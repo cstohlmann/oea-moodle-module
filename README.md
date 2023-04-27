@@ -18,7 +18,7 @@ Moodle requires the access of the [Moodle Database](https://www.examulator.com/e
  
 ## Problem Statement and Module Impact
 
-Many education systems across the world use Moodle as a primary source of LMS data. This particular data source provides a wealth of data from SIS to learning outcomes, as well as digital activity taking place. This module provides methods of data processing and refinement of certain rostering and activity tables from the Moodle database. These tables can then be fitted into schemas (used for supporting package) for individual use-cases.
+Many education systems across the world use Moodle as a primary source of LMS data. This particular data source provides a wealth of data from SIS to student learning outcomes, as well as digital activity taking place. This module provides methods of data processing and refinement of certain rostering and activity tables from the Moodle database. These tables can then be fitted into schemas (used for supporting package) for individual use-cases.
 
 Moodle data can be used for a variety of analytics purposes, including:
  - School and district dashboards for education leaders to identify student activity in learning outcomes progress. 
