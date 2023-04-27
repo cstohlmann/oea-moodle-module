@@ -9,7 +9,7 @@
 Using this module, data from Moodle can be exported into your organization's OEA data lakes to combine it with other datasets for a variety of use cases, including Learning Analytics. 
 
 Moodle requires the access of the [Moodle Database](https://www.examulator.com/er/) from Moodle, which provides school and class roster data as well as activity/student performance data, to enable retrieving the files to be landed in the data lake.
-### CHANGE EVERYTHING BELOW
+### CHANGE VISUAL
 <p align="center">
   <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/insights_module_v0.1_overview.png" alt="Microsoft Insights Module v0.1rc1 Overview"/>
 </p>
@@ -18,20 +18,19 @@ Moodle requires the access of the [Moodle Database](https://www.examulator.com/e
  
 ## Problem Statement and Module Impact
 
-As education systems shift to digital applications and platforms to support learning, it is important for them to be able to see patterns of student digital activity across those applications and platforms. Most students use many different applications and platforms. This module provides data from education-specific applications in O365. This data can be combined with other digital activity data from other applications and platforms used in learning to develop "digital learning insights" across the ecosystem of applications and platforms a student uses.
+Many education systems across the world use Moodle as a primary source of LMS data. This particular data source provides a wealth of data from SIS to learning outcomes, as well as digital activity taking place. This module provides methods of data processing and refinement of certain rostering and activity tables from the Moodle database. These tables can then be fitted into schemas (used for supporting package) for individual use-cases.
 
-Microsoft Insights data can be used for a variety of analytics purposes, including:
- - School and district dashboards for education leaders to identify variability in student activity in learning applications and platforms. 
- - Combining Insights data with other data sources to show the relationship between digital activity and other metrics such as attendance and assessments. 
- - Combining Insights data with student demographics, school information, or geographic data to show patterns of digital activity in relation to the whole education system. This can reveal patterns of inequality in access to digital tools and applications for learning.
+Moodle data can be used for a variety of analytics purposes, including:
+ - School and district dashboards for education leaders to identify student activity in learning outcomes progress. 
+ - Combining Moodle data with other data sources to show the relationship between digital activity and other metrics such as attendance. 
 
 ## Module Setup Instructions
-
+### CHANGE VISUAL & INSTRUCTIONS
 <p align="center">
   <img src="https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/insights_module_v0.1_setup_instructions.png" alt="Microsoft Insights Setup Instructions"/>
 </p>
 
-<ins><strong>Preparation:</ins></strong> This module currently leans on v0.7 of the OEA framework. Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.7 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). 
+<ins><strong>Preparation:</ins></strong> This module currently leans on v0.8rc1 of the OEA framework. Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.7 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). 
 
 <ins><strong>Note:</ins></strong> 
 All the steps outlined below are applicable to deployment of this module with production data. However, if you are doing a test deployment using the [test data sets](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/test_data) we provide as part of this module, skip to step 3.
@@ -52,18 +51,18 @@ All the steps outlined below are applicable to deployment of this module with pr
 5. Verify that the module pipeline landed data into stage 1 and 2, and SQL and lake databases were created. See the [module pipeline page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/pipeline) for detailed instructions.
 6. Download the [module Power BI template file](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/powerbi). Module test data is already imported into the Power BI. See the [module Power BI page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/powerbi) page for details and instructions for switching the Power BI template data source, to import from your Synapse workspace data source.
 
-#### OEA Digital Engagement Schema:
+#### OEA Learning Analytics Schema:
 
-After completing the setup of this module, the MS Education Insights activity schema can be transformed into the [OEA schema standard for digital engagement](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Digital_Engagement_Schema). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
+After completing the setup of this module, the Moodle activity schema can be transformed into the [OEA schema standard for learning analytics](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Learning_Analytics). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
 
 ## Data Sources
 
-This module imports digital activity and roster data for an education system via [School Data Sync](https://sds.microsoft.com/).
+This module imports digital activity and roster data for an education system via queries from the Moodle database.
 - [Digital Activity Data](https://docs.microsoft.com/en-us/schooldatasync/data-lake-schema-activity) provides a log of M365 signal activity from apps including Sharepoint, Teams Channel, Teams Meetings, Assignment Services, OneNote, Reading Progress, and Reflect.
 - [Rostering Data](https://docs.microsoft.com/en-us/schooldatasync/data-lake-schema-rostering) is concerned with students, teachers, courses, and schools relationships.
 - [Azure Active Directory Data](https://docs.microsoft.com/en-us/schooldatasync/data-lake-schema-azure-ad) provides people details and group memberships.
 
-See the [module test data page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights/test_data) for details on data format and contents.
+See the [module test data page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Moodle/test_data) for details on data format and contents.
 
 ## Module Components
 Out-of-the box assets for this OEA module include: 
