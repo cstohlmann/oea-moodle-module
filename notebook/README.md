@@ -19,8 +19,8 @@ Basic functions for data exploration and visualization from Stage 1 to Stage 2 d
 
 ### Module Ingestion Notebook: [Moodle_ingest.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Moodle/notebook/Moodle_ingest.ipynb)
 
-Module notebook responsible for speeding up the process of ingesting the tables, while identifying the columns of primary keys. 
+Module notebook responsible for speeding up the process of ingesting the tables, while identifying the columns of primary keys.
 
 ### Module Refinement Notebook: [Moodle_refine.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Moodle/notebook/Moodle_refine.ipynb)
 
-Module-specific pseudonymization notebook, necessary for speeding up the process of refining the module tables. Steps are clearly outlined in the notebook.
+Module-specific pseudonymization notebook, necessary for speeding up the process of refining the module tables. This notebook also adds the refined tables (that are not automatically added) to the lake database. Steps are clearly outlined in the notebook.
