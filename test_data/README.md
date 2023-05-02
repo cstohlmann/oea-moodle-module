@@ -36,10 +36,10 @@ See full details on the [Moodle SQL Database Table Data Dictionary](https://www.
 | Activity/Messaging | [message_conversations](https://www.examulator.com/er/output/tables/message_conversations.html) | <em>No test data at the moment</em> |
 | Activity/Messaging | [message_conversation_members](https://www.examulator.com/er/output/tables/message_conversation_members.html) | <em>No test data at the moment</em> |
 | Class Pages | [page](https://www.examulator.com/er/output/tables/page.html) | Each record is one page and its config data. |
-| Outcomes/Quizzes | [quiz](https://www.examulator.com/er/output/tables/quiz.html) |  |
-| Outcomes/Quizzes | [quiz_attempts](https://www.examulator.com/er/output/tables/quiz_attempts.html) |  |
-| Outcomes/Quizzes | [quiz_grades](https://www.examulator.com/er/output/tables/quiz_grades.html) |  |
-| Role | [role](https://www.examulator.com/er/output/tables/role.html) |  |
-| Role | [role_assignments](https://www.examulator.com/er/output/tables/role_assignments.html) |  |
+| Outcomes/Quizzes | [quiz](https://www.examulator.com/er/output/tables/quiz.html) | Contains overview data per quiz, per course. Documentation says: "The settings for each quiz. For reports see https://docs.moodle.org/en/ad-hoc_contributed_reports#Quiz_Activity". |
+| Outcomes/Quizzes | [quiz_attempts](https://www.examulator.com/er/output/tables/quiz_attempts.html) | Contains student attempts at quizzes. |
+| Outcomes/Quizzes | [quiz_grades](https://www.examulator.com/er/output/tables/quiz_grades.html) | Grading data of quiz attempt instances. |
+| Role | [role](https://www.examulator.com/er/output/tables/role.html) | Contains overview information about each role in the system (e.g., student vs. professor). |
+| Role | [role_assignments](https://www.examulator.com/er/output/tables/role_assignments.html) | The relationship mapping between each user and each role per course. |
 | People | [user](https://www.examulator.com/er/output/tables/user.html) | Contains the last updated set of information for a given user. |
 | Affiliations | [user_enrolments](https://www.examulator.com/er/output/tables/user_enrolments.html) | The relationship between a user and a course. |
