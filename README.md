@@ -11,7 +11,7 @@ Using this module, data from Moodle can be exported into your organization's OEA
 Moodle requires the access of the [Moodle Database](https://www.examulator.com/er/) from Moodle, which provides school and class roster data as well as activity/student performance data, to enable retrieving the files to be landed in the data lake.
 ### CHANGE VISUAL
 <p align="center">
-  <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/insights_module_v0.1_overview.png" alt="Microsoft Insights Module v0.1rc1 Overview"/>
+  <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Education_Insights/docs/images/insights_module_v0.1_overview.png" alt="Moodle Module v0.1 Overview"/>
 </p>
 
 (Microsoft documentation on Education Insights: [Education Insights in Microsoft Teams](https://learn.microsoft.com/en-us/schooldatasync/enable-education-data-lake-export)) 
