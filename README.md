@@ -40,7 +40,7 @@ All the steps outlined below are applicable to deployment of this module with [t
 [![Launch Cloud Shell](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/launchcloudshell.png "Launch Cloud Shell")](https://shell.azure.com/bash)
     * Download the module release to your Azure clouddrive \
 `cd clouddrive`\
-`wget https://github.com/microsoft/OpenEduAnalytics/releases/download/module_Moodle_v0.1rc1/module_Moodle_v0.1rc1.zip`\
+`wget https://github.com/cstohlmann/oea-moodle-module/releases/download/module_Moodle_v0.1rc1/module_Moodle_v0.1rc1.zip`\
 `unzip ./module_Moodle_v0.1rc1.zip`
     * Run the setup script like this (substitute "mysynapseworkspacename" with your synapse workspace name, which must be less than 13 characters and can only contain letters and numbers - e.g. syn-oea-cisd3v07kw1): \
 `./module_Moodle_v0.1rc1/setup.sh mysynapseworkspacename`) to install this package into your own environment.
