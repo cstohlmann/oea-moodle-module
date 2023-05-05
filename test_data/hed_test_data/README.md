@@ -1,7 +1,7 @@
 > **Note.** Last Generation Dates: 
 > SIS/roster data - 5/4/2023, 
-> assignment/quiz activity data - 5/5/2023
-> forum/lesson activity data - 4/27/2023
+> assignment/quiz activity data - 5/5/2023,
+> forum/lesson activity data - 4/27/2023.
 
 # Higher Ed. Test Data
 
